@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat en tiempo real</title>
-     <style>
+         <style>
         /* Estilo general */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #e6f7ff; /* Fondo azul claro */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,20 +20,26 @@
         #chat-container {
             width: 60%;
             height: 400px;
-            border: 1px solid #ccc;
+            border: 2px solid #007bff; /* Borde azul */
+            border-radius: 8px;
             padding: 10px;
             background-color: white;
             overflow-y: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
         }
 
         /* Estilo para los mensajes */
         .message {
-            padding: 5px;
-            border-bottom: 1px solid #e0e0e0;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #f0f8ff; /* Fondo suave para los mensajes */
+            border-left: 4px solid #007bff; /* Borde izquierdo azul */
         }
 
         .user-name {
             font-weight: bold;
+            color: #007bff; /* Nombre de usuario en azul */
             margin-right: 5px;
         }
 
@@ -41,16 +47,24 @@
         textarea {
             width: 100%;
             height: 50px;
-            border: 1px solid #ccc;
+            border: 2px solid #007bff; /* Borde azul */
             padding: 10px;
             margin-top: 10px;
             font-size: 16px;
             border-radius: 5px;
+            box-sizing: border-box; /* Asegura que el padding no agrande el tamaño */
+            background-color: #f1faff; /* Fondo suave */
+        }
+
+        textarea:focus {
+            border-color: #0056b3; /* Borde azul más oscuro al enfocarse */
+            outline: none; /* Elimina el borde predeterminado de focus */
         }
 
         /* Estilo para la entrada de nombre */
         #name-container {
             text-align: center;
+            margin-bottom: 20px;
         }
 
         #name-container input {
@@ -58,19 +72,43 @@
             font-size: 18px;
             width: 60%;
             margin-bottom: 10px;
+            border: 2px solid #007bff; /* Borde azul */
+            border-radius: 5px;
+            background-color: #f1faff; /* Fondo suave */
+        }
+
+        #name-container input:focus {
+            border-color: #0056b3; /* Borde azul más oscuro al enfocarse */
+            outline: none;
         }
 
         #enter-btn {
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #007bff; /* Fondo azul */
             color: white;
             border: none;
             cursor: pointer;
+            border-radius: 5px;
         }
 
         #enter-btn:hover {
-            background-color: #0056b3;
-        } 
+            background-color: #0056b3; /* Azul más oscuro al pasar el cursor */
+        }
+
+        /* Estilos para mejorar la experiencia visual */
+        #messages {
+            margin-bottom: 20px;
+        }
+
+        #messages div {
+            display: flex;
+            align-items: baseline;
+        }
+
+        #messages span {
+            font-size: 14px;
+            color: #333;
+        }
     </style>
 </head>
 <body>
